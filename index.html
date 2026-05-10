@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pixel Breakout Game</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { margin: 0; background: #000; display: flex; align-items: center; justify-content: center; height: 100vh; }
+
+    #game-wrapper {
+      position: relative;
+      display: inline-block;
+      line-height: 0;
+    }
+
+    /* Video sits BELOW the canvas */
+    #ending {
+      display: none;
+      position: fixed;           /* true fullscreen */
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      object-fit: cover;         /* fill, no letterbox */
+      image-rendering: pixelated; /* crisp pixels, no blur */
+      background: #000;
+      z-index: 10;
+    }
+
+    /* Effects canvas sits ABOVE the video */
+    #effects-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 11;
+    }
+  </style>
+</head>
+<body>
+
+<div id="game-wrapper">
+  <canvas id="game"></canvas>
+</div>
+
+<!-- Video and a dedicated overlay canvas, both fixed/fullscreen -->
+<video id="ending" src="img/ending.mov" preload="auto"></video>
+<canvas id="effects-overlay"></canvas>
+
+<script src="game.js"></script>
+</body>
+</html>

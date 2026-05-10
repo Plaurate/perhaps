@@ -1,0 +1,17 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+
+  /* IMPORTANT PIXEL SETTINGS */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+
+  width: 100vw;
+  height: 100vh;
+}
